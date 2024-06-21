@@ -1,24 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderController : MonoBehaviour
+namespace Script
 {
-    public Text valueText;
-    int progress = 0;
-    public Slider slider;
-
-
-    public void OnSliderChanged(float value)
+    public class SliderController : MonoBehaviour
     {
-        valueText.text = value.ToString();
-    }
+        [SerializeField] private Text   valueText;
+        [SerializeField] private Slider slider;
 
-    public void UpdateProgress()
-    {
-        progress++;
-        slider.value = progress;
+        private int progress;
 
+        public void OnSliderChanged(float value)
+        {
+            valueText.text = value.ToString();
+        }
+
+        public void UpdateProgress()
+        {
+            progress++;
+            slider.value = progress;
+        }
     }
 }

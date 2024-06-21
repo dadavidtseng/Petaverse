@@ -1,38 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReadingCoin : MonoBehaviour
+namespace Script
 {
-    public Text CoinText;
-    public int coin = 0;
-   
-
-    public GameObject Coin;
-    
-
-    void Start()
+    public class ReadingCoin : MonoBehaviour
     {
-        coin = 0;
-    }
+        [SerializeField] private Text coinText;
+        [SerializeField] private int  coin;
 
-    public void AddCoin(int newCoin)
-    {
-        coin += newCoin;
-        return;
-    }
+        private void Start()
+        {
+            coin = 0;
+        }
 
-    public void UpdateCoin()
-    {
-        CoinText.text = "COIN: " + coin; 
+        private void Update()
+        {
+            UpdateCoin();
+        }
 
-    }
+        private void UpdateCoin()
+        {
+            coinText.text = "COIN: " + coin;
+        }
 
-    void Update()
-    {
-        UpdateCoin();
-
-       
+        public void AddCoin(int newCoin)
+        {
+            coin += newCoin;
+        }
     }
 }

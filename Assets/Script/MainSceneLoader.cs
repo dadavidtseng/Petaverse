@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainSceneLoader : MonoBehaviour
+namespace Script
 {
-    // Start is called before the first frame update
-    void OnEnable()
+    public class MainSceneLoader : MonoBehaviour
     {
-        SceneManager.LoadScene("Petaverse", LoadSceneMode.Single);
+        private void OnEnable()
+        {
+            SceneManager.LoadScene("Petaverse", LoadSceneMode.Single);
+        }
     }
-
-
 }
